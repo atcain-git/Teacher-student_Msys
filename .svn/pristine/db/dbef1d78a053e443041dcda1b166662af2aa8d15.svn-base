@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Model
+{
+    public class Group
+    {
+        private int gid;
+        private string hid;
+        private string mid1;
+        private string mid2;
+        private string mid3;
+        private string pro_name;
+        private string pro_intro;
+        public int Gid
+        {
+            get { return gid; }
+            set { gid = value; }
+        }
+        public string Hid
+        {
+            get { return hid; }
+            set { hid = value; }
+        }
+        public string Mid1
+        {
+            get { return mid1; }
+            set { mid1 = value; }
+        }
+        public string Mid2
+        {
+            get { return mid2; }
+            set { mid2 = value; }
+        }
+        public string Pro_name
+        {
+            get { return pro_name; }
+            set { pro_name = value; }
+        }
+        public string Pro_intro
+        {
+            get { return pro_intro; }
+            set { pro_intro = value; }
+        }
+    }
+}

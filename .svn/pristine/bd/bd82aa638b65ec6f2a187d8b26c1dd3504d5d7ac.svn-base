@@ -1,0 +1,89 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data.SqlClient;
+using System.Data;
+namespace SQLDAL
+{
+    public class Group
+    {
+        public bool IsExistence(string uid,Model.Group m_group)
+        {
+            string sql = "select groupid from [groupp] where headman = @uid1 or mid1 = @uid2 or mid2 = @uid3 or mid3 = @uid4";
+            SqlParameter[] paras = new SqlParameter[]
+             {     
+                new SqlParameter ( "@uid1",uid), 
+                new SqlParameter ( "@uid2",uid), 
+                new SqlParameter ( "@uid3",uid), 
+                new SqlParameter ( "@uid4",uid)
+             };
+            try {
+                int gid = (int)SqlDbHelper.ExecuteScalar(sql.ToString(), CommandType.Text, paras);
+                get_Entity(gid, m_group);
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+        private void get_Entity(int groupid, Model.Group m_group)
+        {
+            string sql =
+                "SELECT s1.id id1,s1.name name1,s2.id id2 ,s2.name name2,s3.id id3,s3.name name3,s4.id id4,s4.name name4,[groupp].project_introduction,[groupp].project_name FROM [groupp]" +
+                " LEFT JOIN [student] s1 ON s1.id = [groupp].headman LEFT JOIN [student] s2 ON s2.id = [groupp].mid1 LEFT JOIN [student] s3 ON s3.id = [groupp].mid2 "
+                + "LEFT JOIN [student] s4 ON s4.id = [groupp].mid3 where [groupp].groupid = @gid;";
+            SqlParameter[] paras = new SqlParameter[]
+            { 
+                new SqlParameter ( "@gid",groupid)
+            };
+            DataTable dt = SqlDbHelper.ExecuteDataTable(sql.ToString(), CommandType.Text, paras);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                m_group.Gid = groupid;
+                m_group.Hid = dt.Rows[i]["id1"].ToString();
+                m_group.Hid_name = dt.Rows[i]["name1"].ToString();
+                m_group.Mid1 = dt.Rows[i]["id2"].ToString();
+                m_group.Mid1_name = dt.Rows[i]["name2"].ToString();
+                m_group.Mid2 = dt.Rows[i]["id3"].ToString();
+                m_group.Mid2_name = dt.Rows[i]["name3"].ToString();
+                m_group.Mid3 = dt.Rows[i]["id4"].ToString();
+                m_group.Mid3_name = dt.Rows[i]["name4"].ToString();
+                m_group.Pro_intro = dt.Rows[i]["project_introduction"].ToString();
+                m_group.Pro_name = dt.Rows[i]["project_name"].ToString();
+            }
+
+        }
+        public void Excute(Model.Group m_group)
+        {
+            string sql = "update [groupp] set headman = @hid,mid1 = @mid1, mid2 = @mid2,mid3 = @mid3, project_name = @project_name, project_introduction= @project_introduction where groupid = @gid";
+            SqlParameter[] paras = new SqlParameter[]
+             {     
+                new SqlParameter ( "@hid",m_group.Hid), 
+                new SqlParameter ( "@mid1",m_group.Hid), 
+                new SqlParameter ( "@mid2",m_group.Mid1), 
+                new SqlParameter ( "@mid3",m_group.Mid3),
+                new SqlParameter ( "@project_name",m_group.Pro_name),
+                new SqlParameter ( "@project_introduction",m_group.Pro_intro),
+                new SqlParameter ( "@gid",m_group.Gid)
+             };
+            SqlDbHelper.ExecuteNonQuery(sql.ToString(), CommandType.Text, paras);
+        }
+        public void Insert(Model.Group m_group)
+        {
+            string sql = "insert into groupp(headman,mid1,mid2,mid3,project_name,project_introduction) values(@hid,@mid1,@mid2,@mid3,@project_name,@project_introduction)";
+            SqlParameter[] paras = new SqlParameter[]
+             {     
+                new SqlParameter ( "@hid",m_group.Hid), 
+                new SqlParameter ( "@mid1",m_group.Mid1), 
+                new SqlParameter ( "@mid2",m_group.Mid2), 
+                new SqlParameter ( "@mid3",m_group.Mid3),
+                new SqlParameter ( "@project_name",m_group.Pro_name),
+                new SqlParameter ( "@project_introduction",m_group.Pro_intro)
+             };
+            SqlDbHelper.ExecuteNonQuery(sql.ToString(), CommandType.Text, paras);
+        }
+
+    }
+}

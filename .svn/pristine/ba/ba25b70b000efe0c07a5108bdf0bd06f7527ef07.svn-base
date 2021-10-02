@@ -1,0 +1,89 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data.SqlClient;
+using System.Data;
+namespace SQLDAL
+{
+    public class Group
+    {
+        public DataTable get_Entity(string grade,string major)
+        {
+            string sql =
+                "SELECT [groupp].groupid '小组编号',[groupp].project_name '项目名称',s1.name '队长',s2.name '队员',s3.name '队员',s4.name '队员',first '第一志愿',secondd '第二志愿',third '第三志愿' FROM [groupp]" +
+                " LEFT JOIN [student] s1 ON s1.id = [groupp].headman LEFT JOIN [student] s2 ON s2.id = [groupp].mid1 LEFT JOIN [student] s3 ON s3.id = [groupp].mid2 "
+                + "LEFT JOIN [student] s4 ON s4.id = [groupp].mid3 where s1.Grade = @grade and s1.Major = @major";
+            SqlParameter[] paras = new SqlParameter[]
+             {                  
+                new SqlParameter ( "@Major",major), 
+                new SqlParameter ( "@grade",grade)
+                
+             };
+            DataTable dt = SqlDbHelper.ExecuteDataTable(sql.ToString(), CommandType.Text, paras);
+            /*
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                m_group.Gid = groupid;
+                m_group.Hid = dt.Rows[i]["id1"].ToString();
+                m_group.Hid_name = dt.Rows[i]["name1"].ToString();
+                m_group.Mid1 = dt.Rows[i]["id2"].ToString();
+                m_group.Mid1_name = dt.Rows[i]["name2"].ToString();
+                m_group.Mid2 = dt.Rows[i]["id3"].ToString();
+                m_group.Mid2_name = dt.Rows[i]["name3"].ToString();
+                m_group.Mid3 = dt.Rows[i]["id4"].ToString();
+                m_group.Mid3_name = dt.Rows[i]["name4"].ToString();
+                m_group.Pro_intro = dt.Rows[i]["project_introduction"].ToString();
+                m_group.Pro_name = dt.Rows[i]["project_name"].ToString();
+            }
+             */
+            return dt;
+        }
+        public void Excute(Model.Group m_group)
+        {
+            string sql = "update [group] set headman = s1.id,mid1 = s2.id, mid2 = s3.id,mid3 = s4.id, project_name = @project_name, first=@first,second=@second,@third"
+            + "where groupid = @gid and (s1.name = @HidName or s2.name = @name2 or s3.name = @name3 or s4.name = @name4) FROM [groupp]" +
+                " LEFT JOIN [student] s1 ON s1.id = [groupp].headman LEFT JOIN [student] s2 ON s2.id = [groupp].mid1 LEFT JOIN [student] s3 ON s3.id = [groupp].mid2 "
+                + "LEFT JOIN [student] s4 ON s4.id = [groupp].mid3;"; ;
+            SqlParameter[] paras = new SqlParameter[]
+             {     
+                new SqlParameter ( "@HidName",m_group.Hid_name), 
+                new SqlParameter ( "@name2",m_group.Mid1_name), 
+                new SqlParameter ( "@name3",m_group.Mid2_name), 
+                new SqlParameter ( "@name4",m_group.Mid3_name),
+                new SqlParameter ( "@project_name",m_group.Pro_name),
+                new SqlParameter ( "@first",m_group.First),
+                new SqlParameter ( "@second",m_group.Second),
+                new SqlParameter ( "@third",m_group.Thrid),
+                new SqlParameter ( "@gid",m_group.Gid)
+             };
+            SqlDbHelper.ExecuteNonQuery(sql.ToString(), CommandType.Text, paras);
+        }
+        public void Insert(Model.Group m_group)
+        {
+            string sql = "insert into [group](headman,mid1,mid2,mid3,project_name,project_introduction) values(@hid,@mid1,@mid2,@mid3,@project_name,@project_introduction)";
+            SqlParameter[] paras = new SqlParameter[]
+             {     
+                new SqlParameter ( "@hid",m_group.Hid), 
+                new SqlParameter ( "@mid1",m_group.Hid), 
+                new SqlParameter ( "@mid2",m_group.Mid1), 
+                new SqlParameter ( "@mid3",m_group.Mid3),
+                new SqlParameter ( "@project_name",m_group.Pro_name),
+                new SqlParameter ( "@project_introduction",m_group.Pro_intro)
+             };
+            SqlDbHelper.ExecuteNonQuery(sql.ToString(), CommandType.Text, paras);
+        }
+
+
+        public void Insert(int p,string tid)
+        {
+            string sql = "update teacher set groupid = @id where id = @tid";
+            SqlParameter[] paras = new SqlParameter[]
+             {     
+                new SqlParameter ( "@id",p), 
+                new SqlParameter ( "@tid",tid) 
+             };
+            SqlDbHelper.ExecuteNonQuery(sql.ToString(), CommandType.Text, paras);
+        }
+    }
+}

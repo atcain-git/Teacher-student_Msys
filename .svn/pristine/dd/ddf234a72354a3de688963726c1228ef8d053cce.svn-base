@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Display", "pick\Display.csproj", "{8363ACC2-F311-436A-9BEB-9B1473CE92A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{ED6715C2-40BB-48FD-8381-AF7757BC2B66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{B0A59FB4-FFC2-4821-A72B-7E51DEA13377}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLDAL", "SQLDAL\SQLDAL.csproj", "{E199C67E-E7A9-448E-B16B-7E67ADBCB208}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8363ACC2-F311-436A-9BEB-9B1473CE92A3}.Debug|x86.ActiveCfg = Debug|x86
+		{8363ACC2-F311-436A-9BEB-9B1473CE92A3}.Debug|x86.Build.0 = Debug|x86
+		{8363ACC2-F311-436A-9BEB-9B1473CE92A3}.Release|x86.ActiveCfg = Release|x86
+		{8363ACC2-F311-436A-9BEB-9B1473CE92A3}.Release|x86.Build.0 = Release|x86
+		{ED6715C2-40BB-48FD-8381-AF7757BC2B66}.Debug|x86.ActiveCfg = Debug|x86
+		{ED6715C2-40BB-48FD-8381-AF7757BC2B66}.Debug|x86.Build.0 = Debug|x86
+		{ED6715C2-40BB-48FD-8381-AF7757BC2B66}.Release|x86.ActiveCfg = Release|x86
+		{ED6715C2-40BB-48FD-8381-AF7757BC2B66}.Release|x86.Build.0 = Release|x86
+		{B0A59FB4-FFC2-4821-A72B-7E51DEA13377}.Debug|x86.ActiveCfg = Debug|x86
+		{B0A59FB4-FFC2-4821-A72B-7E51DEA13377}.Debug|x86.Build.0 = Debug|x86
+		{B0A59FB4-FFC2-4821-A72B-7E51DEA13377}.Release|x86.ActiveCfg = Release|x86
+		{B0A59FB4-FFC2-4821-A72B-7E51DEA13377}.Release|x86.Build.0 = Release|x86
+		{E199C67E-E7A9-448E-B16B-7E67ADBCB208}.Debug|x86.ActiveCfg = Debug|x86
+		{E199C67E-E7A9-448E-B16B-7E67ADBCB208}.Debug|x86.Build.0 = Debug|x86
+		{E199C67E-E7A9-448E-B16B-7E67ADBCB208}.Release|x86.ActiveCfg = Release|x86
+		{E199C67E-E7A9-448E-B16B-7E67ADBCB208}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

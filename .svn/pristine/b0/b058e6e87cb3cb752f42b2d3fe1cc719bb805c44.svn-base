@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
+using System.Data.SqlClient;
+namespace BLL
+{
+    public class Group
+    {
+        SQLDAL.Group dao = new SQLDAL.Group();
+        public DataTable getGroup(string grade, string major, string tid)
+        {
+            return dao.get_Entity(grade, major, tid);
+        }
+        public DataTable getGroups(string grade, string major)
+        {
+            return dao.get_Entity(grade,major);
+        }
+        
+        public void Modefiy(int gid, Model.Group group, out string msg)
+        {
+            try {
+                dao.Excute(group);
+                msg = "提交成功";
+            }
+            catch(SqlException ex){
+                throw (ex);
+            }catch(Exception ex){
+                throw(ex);
+            }
+            return ;
+        }
+
+        public void UpdateTea(int p, string tid, out string msg)
+        {
+            try
+            {
+                msg = "提交成功";
+                dao.Insert(p, tid);
+            }
+            catch (SqlException ex)
+            {
+                throw (ex);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return;
+        }
+    }
+}

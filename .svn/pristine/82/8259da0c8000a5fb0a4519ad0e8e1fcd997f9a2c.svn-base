@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Model
+{
+    class Student
+    {
+        private string _uid;
+        private string _psd;
+        public Student()
+        {
+
+        }
+        
+        public string StuId
+        {
+            set { _uid = value; }
+            get { return this._uid; }
+        }
+        public string StuPsd
+        {
+            set { _psd = value; }
+            get { return this._psd; }
+        }
+    }
+
+    public class SStudent
+    {
+        private string id, psw;
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public string Psw
+        {
+            get { return psw; }
+            set { psw = value; }
+        }
+    }
+}

@@ -1,0 +1,106 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+using SQLDAL;
+
+namespace pick
+{
+    public partial class 登陆 : Form
+    {
+        public 登陆()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "" || textBox2.Text != "")
+            { login(); }
+            else
+            { MessageBox.Show("不能为空"); }
+        }
+
+        public Boolean login()//登陆方法
+        {
+            string id;
+            string psw;
+            id = textBox1.Text;
+            psw = textBox2.Text;
+
+            using (SqlConnection cn = new SqlConnection())
+            {
+                DAO dao = new DAO();
+                cn.ConnectionString = "server=121.5.51.167;database=homework;uid=sa;pwd=gdy123456.";
+                if (radioButtonadmin.Checked == true)//管理员
+                {
+                    string sql = "Select * from dbo.admin where id=@id and psw=@psw";
+                    SqlCommand cmd = new SqlCommand(sql, cn);
+                    cmd.CommandType = CommandType.Text;
+                    SqlParameter[] paras = new SqlParameter[]
+                    {     
+                        new SqlParameter ( "@id",id), 
+                        new SqlParameter ( "@psw",psw)
+                    };
+
+                    IDataReader dc = dao.read(sql, paras);
+                    if (dc.Read())
+                    {
+                        MessageBox.Show("登陆成功");
+                        管理员 a = new 管理员();//新窗体弹窗，旧的隐藏
+                        this.Hide();
+                        a.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    { MessageBox.Show("登陆失败"); }
+                }
+                textBox1.Text = "";
+                textBox2.Text = "";
+                return true;
+            }
+        }
+
+
+
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 登陆_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private void 登陆_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            密码找回 a = new 密码找回();//新窗体弹窗，旧的隐藏
+            this.Hide();
+            a.ShowDialog();
+            this.Show();
+        }
+
+
+        
+
+        
+    }
+}
+

@@ -1,0 +1,9 @@
+C:\Users\zjy\Desktop\test\双选系统\stutdent\SQLDAL\bin\Debug\SQLDAL.exe
+C:\Users\zjy\Desktop\test\双选系统\stutdent\SQLDAL\bin\Debug\SQLDAL.pdb
+C:\Users\zjy\Desktop\test\双选系统\stutdent\SQLDAL\bin\Debug\MODEL.exe
+C:\Users\zjy\Desktop\test\双选系统\stutdent\SQLDAL\bin\Debug\MODEL.pdb
+C:\Users\zjy\Desktop\test\双选系统\stutdent\SQLDAL\obj\x86\Debug\SQLDAL.csprojResolveAssemblyReference.cache
+C:\Users\zjy\Desktop\test\双选系统\stutdent\SQLDAL\obj\x86\Debug\SQLDAL.Properties.Resources.resources
+C:\Users\zjy\Desktop\test\双选系统\stutdent\SQLDAL\obj\x86\Debug\SQLDAL.csproj.GenerateResource.Cache
+C:\Users\zjy\Desktop\test\双选系统\stutdent\SQLDAL\obj\x86\Debug\SQLDAL.exe
+C:\Users\zjy\Desktop\test\双选系统\stutdent\SQLDAL\obj\x86\Debug\SQLDAL.pdb

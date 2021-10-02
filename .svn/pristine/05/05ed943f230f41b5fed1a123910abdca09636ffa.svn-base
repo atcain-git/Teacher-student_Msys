@@ -1,0 +1,110 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
+using SQLDAL;
+namespace pick
+{
+    public partial class 登陆 : Form
+    {
+        public 登陆()
+        {
+            InitializeComponent();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "" || textBox2.Text != "")
+            {
+                login();
+            }
+
+            else
+            {
+                MessageBox.Show("不能为空");
+            }
+        }
+
+
+        public Boolean login()//登陆方法
+        {
+            string id;
+            string psw;
+            id = textBox1.Text;
+            psw = textBox2.Text;
+
+            using (SqlConnection cn = new SqlConnection())
+            {
+                 DAO dao = new DAO();
+
+                 cn.ConnectionString = "server=121.5.51.167;database=homework;uid=sa;pwd=gdy123456.";
+                if (radioButtonstudent.Checked == true)//管理员
+                {
+                    string sql = "Select * from student where id=id and psw=psw";
+                    //string sql = string.Format(@"Select * from t_admin(id, psd)values(@id,@psd) ");
+
+                    //SqlConnection conn = new SqlConnection("server=DESKTOP-5J7393F;database=BookDB;uid=sa;pwd=123456");
+                    SqlCommand cmd = new SqlCommand(sql, cn);
+
+                    cmd.Parameters.Clear();
+
+                    cmd.CommandText = sql;
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@psw", psw);
+                    textBox3.Text = cmd.CommandText;
+                    //conn.Open();
+                    cn.Open();
+
+                    cmd.ExecuteNonQuery();
+                    int result = cmd.ExecuteNonQuery();
+                    IDataReader dc = dao.read(sql);
+                    if (dc.Read())
+                    {
+                        MessageBox.Show("登陆成功");
+                        学生 a = new 学生();//新窗体弹窗，旧的隐藏
+                        this.Hide();
+                        a.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    { MessageBox.Show("登陆失败"); }
+                    dao.DaoClose();
+
+
+
+                }
+
+
+                return true;
+
+
+            }
+        }
+    }
+}

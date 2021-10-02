@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
+using System.Data.SqlClient;
+namespace BLL
+{
+    public class Student
+    {
+        SQLDAL.Student dao = new SQLDAL.Student();
+        public DataTable getUnOrgnizeEnity(string grade,string major)
+        {
+            return dao.getUnOrgnizeEnity(grade, major);
+        }
+
+        public DataTable getEnitity(string grade, string major)
+        {
+            try
+            {
+                return dao.getEnity(grade, major);
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataTable getGroup(string grade,string major)
+        {
+            return dao.getGroup(grade ,major);
+        }
+    }
+}

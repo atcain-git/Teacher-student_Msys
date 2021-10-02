@@ -1,0 +1,17 @@
+C:\Users\zjy\Desktop\admin\BLL\obj\x86\Debug\BLL.Properties.Resources.resources
+C:\Users\zjy\Desktop\admin\BLL\obj\x86\Debug\BLL.csproj.GenerateResource.Cache
+C:\Users\zjy\Desktop\admin\BLL\bin\Debug\BLL.exe
+C:\Users\zjy\Desktop\admin\BLL\bin\Debug\BLL.pdb
+C:\Users\zjy\Desktop\admin\BLL\obj\x86\Debug\BLL.exe
+C:\Users\zjy\Desktop\admin\BLL\obj\x86\Debug\BLL.pdb
+C:\Users\zjy\Desktop\test\双选系统\admin\BLL\bin\Debug\BLL.exe
+C:\Users\zjy\Desktop\test\双选系统\admin\BLL\bin\Debug\BLL.pdb
+C:\Users\zjy\Desktop\test\双选系统\admin\BLL\bin\Debug\Model.exe
+C:\Users\zjy\Desktop\test\双选系统\admin\BLL\bin\Debug\SQLDAL.exe
+C:\Users\zjy\Desktop\test\双选系统\admin\BLL\bin\Debug\Model.pdb
+C:\Users\zjy\Desktop\test\双选系统\admin\BLL\bin\Debug\SQLDAL.pdb
+C:\Users\zjy\Desktop\test\双选系统\admin\BLL\obj\x86\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\zjy\Desktop\test\双选系统\admin\BLL\obj\x86\Debug\BLL.Properties.Resources.resources
+C:\Users\zjy\Desktop\test\双选系统\admin\BLL\obj\x86\Debug\BLL.csproj.GenerateResource.Cache
+C:\Users\zjy\Desktop\test\双选系统\admin\BLL\obj\x86\Debug\BLL.exe
+C:\Users\zjy\Desktop\test\双选系统\admin\BLL\obj\x86\Debug\BLL.pdb

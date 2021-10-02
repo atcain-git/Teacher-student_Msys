@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using MODEL;
+
+namespace pick
+{
+    public partial class 教师_个人信息1 : Form
+    {
+        public 教师_个人信息1()
+        {
+            InitializeComponent();
+        }
+
+        
+
+        private void 教师_个人信息1_Load(object sender, EventArgs e)
+        {
+            string str = "1001";
+            label5.Text = str;
+            if (!str.Equals(""))
+            {
+                BLL.Message b_mess = new BLL.Message();
+                MODEL.Message message = new MODEL.Message();
+                message.Id = str;
+                b_mess.select_info(message);
+                sName.Text = message.Name;
+                Sex.Text = message.Sex; Phone.Text = message.Phone;
+                Major.Text = message.Major; Grade.Text = message.Grade;
+                Email.Text = message.Email; College.Text = message.College;
+                Number.Text = message.Number.ToString(); Title.Text = message.Title;
+                pwd.Text = message.Psd; Guidance.Text = message.Gudiance;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MODEL.Message message = new MODEL.Message();
+            message.Name = sName.Text; message.Id = label5.Text;
+            message.Sex = Sex.Text; message.Phone = Phone.Text;
+            message.Major = Major.Text; message.Grade = Grade.Text;
+            message.Email = Email.Text; message.College = College.Text;
+            message.Number = int.Parse(Number.Text.ToString()); message.Gudiance = Guidance.Text;
+            message.Psd = pwd.Text; message.Title = Title.Text;
+            BLL.Message b_mess = new BLL.Message();
+            string msg = "";
+            if (b_mess.InsertMessage(message, out msg))
+            {
+                MessageBox.Show(msg);
+            }
+        }
+    }
+}

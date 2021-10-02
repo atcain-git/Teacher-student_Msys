@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace MODEL
+{
+    class Teacher
+    {
+        public Teacher()
+        {
+
+        }
+        private string _userId;
+        private string _password;
+        /// <summary>
+        /// 用户名
+        /// </summary>
+        public string UserId
+        {
+            set { _userId = value; }
+            get { return _userId; }
+        }
+        /// <summary>
+        /// 密码
+        /// </summary>
+        public string Password
+        {
+            set { _password = value; }
+            get { return _password; }
+        }
+    }
+
+    public class TTeacher
+    {
+        private string id, psw;
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public string Psw
+        {
+            get { return psw; }
+            set { psw = value; }
+        }
+    }
+}

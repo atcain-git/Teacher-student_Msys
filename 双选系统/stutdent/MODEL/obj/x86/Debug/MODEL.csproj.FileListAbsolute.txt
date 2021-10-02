@@ -1,0 +1,7 @@
+C:\Users\zjy\Desktop\test\双选系统\stutdent\MODEL\bin\Debug\MODEL.exe
+C:\Users\zjy\Desktop\test\双选系统\stutdent\MODEL\bin\Debug\MODEL.pdb
+C:\Users\zjy\Desktop\test\双选系统\stutdent\MODEL\obj\x86\Debug\MODEL.Properties.Resources.resources
+C:\Users\zjy\Desktop\test\双选系统\stutdent\MODEL\obj\x86\Debug\MODEL.csproj.GenerateResource.Cache
+C:\Users\zjy\Desktop\test\双选系统\stutdent\MODEL\obj\x86\Debug\MODEL.exe
+C:\Users\zjy\Desktop\test\双选系统\stutdent\MODEL\obj\x86\Debug\MODEL.pdb
+C:\Users\zjy\Desktop\test\双选系统\stutdent\MODEL\obj\x86\Debug\MODEL.csprojResolveAssemblyReference.cache

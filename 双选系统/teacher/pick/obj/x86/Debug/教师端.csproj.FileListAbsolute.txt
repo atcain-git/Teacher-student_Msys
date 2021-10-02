@@ -1,0 +1,17 @@
+C:\Users\mycnnyu\Desktop\教师端\pick\obj\x86\Debug\pick.exe
+C:\Users\mycnnyu\Desktop\教师端\pick\obj\x86\Debug\pick.pdb
+C:\Users\zjy\Desktop\teacher\pick\obj\x86\Debug\pick.exe
+C:\Users\zjy\Desktop\teacher\pick\obj\x86\Debug\pick.pdb
+C:\Users\zjy\Desktop\teacher\pick\obj\x86\Debug\pick.处理学生申请.resources
+C:\Users\zjy\Desktop\teacher\pick\obj\x86\Debug\pick.教师_个人信息1.resources
+C:\Users\zjy\Desktop\teacher\pick\obj\x86\Debug\pick.密码找回.resources
+C:\Users\zjy\Desktop\teacher\pick\obj\x86\Debug\pick.教师.resources
+C:\Users\zjy\Desktop\teacher\pick\obj\x86\Debug\pick.注册.resources
+C:\Users\zjy\Desktop\teacher\pick\obj\x86\Debug\pick.登陆.resources
+C:\Users\zjy\Desktop\teacher\pick\obj\x86\Debug\pick.Properties.Resources.resources
+C:\Users\zjy\Desktop\teacher\pick\obj\x86\Debug\pick.学生队伍管理.resources
+C:\Users\zjy\Desktop\teacher\pick\obj\x86\Debug\教师端.csproj.GenerateResource.Cache
+C:\Users\zjy\Desktop\teacher\pick\bin\Debug\pick.exe
+C:\Users\zjy\Desktop\teacher\pick\bin\Debug\pick.pdb
+C:\Users\zjy\Desktop\test\双选系统\teacher\pick\obj\x86\Debug\pick.exe
+C:\Users\zjy\Desktop\test\双选系统\teacher\pick\obj\x86\Debug\pick.pdb

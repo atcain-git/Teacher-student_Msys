@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using SQLDAL;
+using Model;
+using MODEL;
+namespace BLL
+{
+    public class Teacher
+    {
+        public void login(){
+            SQLDAL.Teacher t = new SQLDAL.Teacher();
+            return ;
+        }
+    }
+
+    public class TeacherLogic
+    {
+        TeacherService teacherService = new TeacherService();
+
+        public TTeacher UserLogin(TTeacher teacher)
+        {
+
+            return teacherService.UserLogin(teacher);
+        }
+
+    }
+}

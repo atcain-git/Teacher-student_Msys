@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
+
+namespace pick
+{
+    static class Program
+    {
+        /// <summary>
+        /// 应用程序的主入口点。
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new 教师信息管理());
+            //Application.Run(new 组队情况管理());
+            //Application.Run(new 登陆());
+            //Application.Run(new 密码找回());
+            //Application.Run(new 学生信息管理());
+
+        }
+    }
+}

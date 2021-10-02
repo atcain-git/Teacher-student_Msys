@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using SQLDAL;
+namespace BLL
+{
+    public class Teacher
+    {
+        public void login(){
+            SQLDAL.Teacher t = new SQLDAL.Teacher();
+            return ;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data.Sql;
+using System.Data;
+namespace SQLDAL
+{
+    public class Student
+    {
+        public DataTable getUnOrgnizeEnity()
+        {
+            //LinkedList<Model.Student> students = new LinkedList<Model.Student>();  
+            string sql = "select id '学号',name '姓名',grade'年级',college '学院',major '专业' from student where groupId is null";
+            DataTable dt =  SqlDbHelper.ExecuteDataTable(sql);
+
+            /*for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Model.Student student = new Model.Student();
+                student.Id = dt.Rows[i]["id"].ToString();
+                student.Major = dt.Rows[i]["major"].ToString();
+                student.Name = dt.Rows[i]["name"].ToString();
+                student.Grade = dt.Rows[i]["grade"].ToString();
+                student.Grade = dt.Rows[i]["college"].ToString();
+                students.AddLast(student);
+            }
+             
+            return students.ToArray();
+            */ 
+            return dt;
+        }
+
+        public DataTable getEnity()
+        {
+            string sql = "select id '学号',name '姓名',grade'年级',sex '性别',college '学院',major '专业',phone '联系电话',psw '密码' from student";
+            DataTable dt = SqlDbHelper.ExecuteDataTable(sql);
+            return dt;
+        }
+
+        public DataTable getGroup()
+        {
+            string sql = "select [group].project_name '项目名称',student.id '学号',student.name '姓名',student.grade'年级',student.college '学院',student.major '专业',teacher.name '指导老师' from student left JOIN [group] ON student.groupId = [group].groupid LEFT JOIN teacher on teacher.groupid = [group].groupid;";
+            DataTable dt = SqlDbHelper.ExecuteDataTable(sql);
+            return dt;
+        }
+    }
+}

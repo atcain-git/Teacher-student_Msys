@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8363ACC2-F311-436A-9BEB-9B1473CE92A3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>pick</RootNamespace>
+    <AssemblyName>pick</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data.cs" />
+    <Compile Include="管理员-发布时间.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="管理员-发布时间.Designer.cs">
+      <DependentUpon>管理员-发布时间.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="登陆-忘记密码.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="登陆-忘记密码.Designer.cs">
+      <DependentUpon>登陆-忘记密码.cs</DependentUpon>
+    </Compile>
+    <Compile Include="管理员-教师信息管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="管理员-教师信息管理.Designer.cs">
+      <DependentUpon>管理员-教师信息管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="登陆.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="登陆.Designer.cs">
+      <DependentUpon>登陆.cs</DependentUpon>
+    </Compile>
+    <Compile Include="管理员-未组队学生管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="管理员-未组队学生管理.Designer.cs">
+      <DependentUpon>管理员-未组队学生管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="管理员.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="管理员.Designer.cs">
+      <DependentUpon>管理员.cs</DependentUpon>
+    </Compile>
+    <Compile Include="管理员-学生信息管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="管理员-学生信息管理.Designer.cs">
+      <DependentUpon>管理员-学生信息管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="管理员-组队情况管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="管理员-组队情况管理.Designer.cs">
+      <DependentUpon>管理员-组队情况管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="管理端——自由组队.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="管理端——自由组队.Designer.cs">
+      <DependentUpon>管理端——自由组队.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="登陆-忘记密码.resx">
+      <DependentUpon>登陆-忘记密码.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="管理员-发布时间.resx">
+      <DependentUpon>管理员-发布时间.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="管理员-教师信息管理.resx">
+      <DependentUpon>管理员-教师信息管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="登陆.resx">
+      <DependentUpon>登陆.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="管理员-未组队学生管理.resx">
+      <DependentUpon>管理员-未组队学生管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="管理员.resx">
+      <DependentUpon>管理员.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="管理员-学生信息管理.resx">
+      <DependentUpon>管理员-学生信息管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="管理员-组队情况管理.resx">
+      <DependentUpon>管理员-组队情况管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="管理端——自由组队.resx">
+      <DependentUpon>管理端——自由组队.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fc6435db454af1dbb1eae217742b1ed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\首页1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\注册.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SQLDAL\SQLDAL.csproj">
+      <Project>{E199C67E-E7A9-448E-B16B-7E67ADBCB208}</Project>
+      <Name>SQLDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

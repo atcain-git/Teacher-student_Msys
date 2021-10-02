@@ -1,0 +1,13 @@
+C:\Users\zjy\Desktop\admin\Model\obj\x86\Debug\Model.Properties.Resources.resources
+C:\Users\zjy\Desktop\admin\Model\obj\x86\Debug\Model.csproj.GenerateResource.Cache
+C:\Users\zjy\Desktop\admin\Model\bin\Debug\Model.exe
+C:\Users\zjy\Desktop\admin\Model\bin\Debug\Model.pdb
+C:\Users\zjy\Desktop\admin\Model\obj\x86\Debug\Model.exe
+C:\Users\zjy\Desktop\admin\Model\obj\x86\Debug\Model.pdb
+C:\Users\zjy\Desktop\test\双选系统\admin\Model\bin\Debug\Model.exe
+C:\Users\zjy\Desktop\test\双选系统\admin\Model\bin\Debug\Model.pdb
+C:\Users\zjy\Desktop\test\双选系统\admin\Model\obj\x86\Debug\Model.Properties.Resources.resources
+C:\Users\zjy\Desktop\test\双选系统\admin\Model\obj\x86\Debug\Model.csproj.GenerateResource.Cache
+C:\Users\zjy\Desktop\test\双选系统\admin\Model\obj\x86\Debug\Model.exe
+C:\Users\zjy\Desktop\test\双选系统\admin\Model\obj\x86\Debug\Model.pdb
+C:\Users\zjy\Desktop\test\双选系统\admin\Model\obj\x86\Debug\Model.csprojResolveAssemblyReference.cache

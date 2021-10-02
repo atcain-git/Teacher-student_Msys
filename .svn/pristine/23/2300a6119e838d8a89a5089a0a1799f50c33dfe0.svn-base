@@ -1,0 +1,68 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+using SQLDAL;
+
+namespace pick
+{
+    public partial class 登陆 : Form
+    {
+        public 登陆()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string uid;
+            string pwd;
+
+            uid = textBox1.Text;
+            pwd = textBox2.Text;
+
+             using (SqlConnection m_cnADONetConnection = new SqlConnection())
+            {
+                m_cnADONetConnection.ConnectionString = connection.connect_str;
+                m_cnADONetConnection.Open();
+                string sql = string.Format("select * from [users] where uid ='{0}' and pwd = '{1}'", uid, pwd);
+                SqlDataAdapter sda = new SqlDataAdapter(sql, m_cnADONetConnection);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                int i = dt.Rows.Count;
+            }
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+    
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+ 
+

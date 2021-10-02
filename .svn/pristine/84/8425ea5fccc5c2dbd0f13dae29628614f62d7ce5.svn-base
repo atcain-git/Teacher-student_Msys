@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace SQLDAL
+{
+    public class Group
+    {
+        private int gid;
+
+        private string headId;
+        private string mid1;
+
+
+        private string mid2;
+
+
+        private string mid3;
+
+
+        private string hname;
+
+
+        private string hinfo;
+
+
+        public int Gid
+        {
+            get { return gid; }
+            set { gid = value; }
+        }
+        public string HeadId
+        {
+            get { return headId; }
+            set { headId = value; }
+        }
+        public string Mid1
+        {
+            get { return mid1; }
+            set { mid1 = value; }
+        }
+        public string Mid2
+        {
+            get { return mid2; }
+            set { mid2 = value; }
+        }
+        public string Mid3
+        {
+            get { return mid3; }
+            set { mid3 = value; }
+        }
+        public string Hname
+        {
+            get { return hname; }
+            set { hname = value; }
+        }
+        public string Hinfo
+        {
+            get { return hinfo; }
+            set { hinfo = value; }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Model
+{
+    class Student
+    {
+        private string _id;
+
+        private string _name;
+
+        private string _sex;
+
+        private string _college;
+
+        private string _grade;
+
+        private string _email;
+
+        private string _phone;
+
+        private string _major;
+
+        private string _class;
+
+        private string _idCard;
+
+        private string _introduction;
+
+        private string _groupNumber;
+
+    }
+}

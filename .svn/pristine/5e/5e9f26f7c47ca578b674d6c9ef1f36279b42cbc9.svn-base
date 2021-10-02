@@ -1,0 +1,71 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using SQLDAL;
+namespace pick
+{
+    public partial class 选择导师 : Form
+    {
+        public 选择导师()
+        {
+            InitializeComponent();
+            Table();
+        }
+        //从数据库读取数据显示在表格控件中
+        public void Table()
+        {
+            dataGridView1.Rows.Clear();
+            DAO dao = new DAO();
+            string sql = "select id,name,number,introduction from teacher";
+            IDataReader dc = dao.read(sql,null);
+            string a0, a1, a2, a3;
+            while (dc.Read())
+            {
+                a0 = dc[0].ToString();
+                a1 = dc[1].ToString();
+                a2 = dc[2].ToString();
+                a3 = dc[3].ToString();
+                string[] table = { a0, a1, a2, a3 };
+                //string[] intro = { a3 };
+                //textBox4.Text=a3;
+                dataGridView1.Rows.Add(table);
+
+            }
+            dc.Close();
+            dao.DaoClose();
+        }
+        private void 选择导师_Load(object sender, EventArgs e)
+        {
+            dataGridView1.ReadOnly = true;
+        }
+
+        private void dataGridView11_MouseClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            if (radioButton1.Checked)
+            {
+                textBox3.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBox2.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+
+            }
+            else if (radioButton2.Checked)
+            {
+                textBox4.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBox2.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+
+            }
+            else if (radioButton3.Checked)
+            {
+                textBox5.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBox2.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            }
+           
+        }
+        }
+    }
+

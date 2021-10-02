@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Model;
+using System.Data.SqlClient;
+namespace SQLDAL
+{
+    class Student
+    {
+    }
+    public class StudentService
+    {
+        public SStudent UserLogin(SStudent student)
+        {
+
+            string sql = "select * from dbo.student where id=@id and psw=@psw";
+            SqlParameter[] paras = new SqlParameter[]
+                    {     
+                        new SqlParameter ( "@id",student.Id),
+                        new SqlParameter ( "@psw",student.Psw)
+                    };
+
+            try
+            {
+                SqlDataReader reader = SqlDbHelper.GetDataReader(sql, paras);
+                if (reader.Read())
+                {
+                    student.Id = reader["id"].ToString();
+                }
+                else
+                { student = null; }
+                reader.Close();
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return student;
+        
+        
+        
+        
+        }
+    }
+}

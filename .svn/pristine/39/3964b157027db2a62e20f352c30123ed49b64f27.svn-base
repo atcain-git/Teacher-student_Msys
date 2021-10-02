@@ -1,0 +1,81 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+namespace pick
+{
+    public partial class 教师信息管理 : Form
+    {
+        public 教师信息管理()
+        {
+            InitializeComponent();
+        }
+
+        private void 教师信息管理_Load(object sender, EventArgs e)
+        {
+            string grade = Grade.Text;
+            string major = Major.Text;
+            BLL.Teacher b_teacher = new BLL.Teacher();
+            DataTable dt = b_teacher.getTeachers(grade,major);
+            dataGridView2.DataSource = dt;
+            int width = 0;
+            for (int i = 0; i < this.dataGridView2.Columns.Count; i++)
+            {
+                //将每一列都调整为自动适应模式
+                this.dataGridView2.AutoResizeColumn(i, DataGridViewAutoSizeColumnMode.AllCellsExceptHeader);
+                //记录整个DataGridView的宽度
+                width += this.dataGridView2.Columns[i].Width;
+            }
+            //判断调整后的宽度与原来设定的宽度的关系，如果是调整后的宽度大于原来设定的宽度，
+            //则将DataGridView的列自动调整模式设置为显示的列即可，
+            //如果是小于原来设定的宽度，将模式改为填充。
+            if (width > this.dataGridView2.Size.Width)
+            {
+                this.dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            }
+            else
+            {
+                this.dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            //冻结某列 从左开始 0，1，2
+            dataGridView2.Columns[1].Frozen = true;
+            dataGridView2.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            string grade = Grade.Text;
+            string major = Major.Text;
+            BLL.Teacher b_teacher = new BLL.Teacher();
+            DataTable dt = b_teacher.getTeachers(grade, major);
+            dataGridView2.DataSource = dt;
+            int width = 0;
+            for (int i = 0; i < this.dataGridView2.Columns.Count; i++)
+            {
+                //将每一列都调整为自动适应模式
+                this.dataGridView2.AutoResizeColumn(i, DataGridViewAutoSizeColumnMode.AllCellsExceptHeader);
+                //记录整个DataGridView的宽度
+                width += this.dataGridView2.Columns[i].Width;
+            }
+            //判断调整后的宽度与原来设定的宽度的关系，如果是调整后的宽度大于原来设定的宽度，
+            //则将DataGridView的列自动调整模式设置为显示的列即可，
+            //如果是小于原来设定的宽度，将模式改为填充。
+            if (width > this.dataGridView2.Size.Width)
+            {
+                this.dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            }
+            else
+            {
+                this.dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            //冻结某列 从左开始 0，1，2
+            dataGridView2.Columns[1].Frozen = true;
+            dataGridView2.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+        
+    }
+}

@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
+namespace SQLDAL
+{
+    public class Teacher
+    {
+        public DataTable getTeachers()
+        {
+            string sql = "select id '工号',name '姓名',grade'年级',sex '性别',Title '职称',phone '联系电话',psw '密码' from teacher";
+            DataTable dt = SqlDbHelper.ExecuteDataTable(sql);
+            return dt;
+        }
+    }
+}
